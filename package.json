@@ -1,0 +1,24 @@
+{
+  "name": "nexo-assist",
+  "private": true,
+  "packageManager": "pnpm@12.5.1",
+  "scripts": {
+    "dev": "concurrently -n tickets,web -c magenta,cyan \"pnpm --filter @nexo/tickets dev\" \"pnpm --filter @nexo/web dev\"",
+    "build": "pnpm -r build",
+    "start": "concurrently -n tickets,web -c magenta,cyan \"pnpm --filter @nexo/tickets start\" \"pnpm --filter @nexo/web start\"",
+    "db:seed": "pnpm --filter @nexo/tickets db:seed && pnpm --filter @nexo/web db:seed",
+    "test": "vitest run",
+    "eval": "pnpm --filter @nexo/agent eval",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "concurrently": "^9.2.0",
+    "tsx": "^4.20.0",
+    "typescript": "~5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

@@ -1,0 +1,43 @@
+# Dependências
+node_modules/
+.pnpm-store/
+
+# Build
+.next/
+out/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# Ambiente: só o exemplo vai para o repositório
+.env
+.env.*
+!.env.example
+
+# Bancos locais (recriados com pnpm db:seed)
+data/*
+!data/.gitkeep
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Testes
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Deploy
+.vercel/
+.turbo/
+
+# Editor e sistema
+.claude/
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
